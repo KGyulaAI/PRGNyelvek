@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace PRGNyelvek
 {
@@ -23,6 +24,37 @@ namespace PRGNyelvek
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnRogzit_Click(object sender, RoutedEventArgs e)
+        {
+            string neve = txtNev.Text;
+            bool forditosE;
+            int megjelenesEve = Convert.ToInt32(txtMegjelenes.Text);
+            bool alacsaonySzintuE;
+            int nepszeruseg2022 = Convert.ToInt32(sliNepszeruseg.Value);
+            Nyelvcsaladok nyelvcsalad;
+
+            if (rdoFordito.IsChecked == true)
+            {
+                forditosE = true;
+            }
+            else
+            {
+                forditosE = false;
+            }
+
+            if (rdoAlacsonySzintu.IsChecked == true)
+            {
+                alacsaonySzintuE = true;
+            }
+            else
+            {
+                alacsaonySzintuE = false;
+            }
+
+           // Nyelv nyelv = new Nyelv(neve, forditosE, megjelenesEve, alacsaonySzintuE, nepszeruseg2022, nyelvcsalad);
+            StreamWriter streamWriter = new StreamWriter("nyelvek.txt", append:true);
         }
     }
 }

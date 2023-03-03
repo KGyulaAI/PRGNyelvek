@@ -20,63 +20,57 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" 
-               Content="Nyelv neve:"/>
-        <TextBox Grid.Row="0" Grid.Column="1"
-            x:Name="txtNev"/>
+        <Label Content="Nyelv neve:"
+            Grid.Row="0" Grid.Column="0"/>
 
-        <RadioButton Content="Forditó" 
+        <TextBox x:Name="txtNev"
+                 Grid.Row="0" Grid.Column="1"/>
+
+        <RadioButton x:Name="rdoFordito" 
+                     Content="Forditó"
                      Grid.Row="1" Grid.Column="0"
-                         x:Name="rdbFordito" 
-                         GroupName="ForditasModja"
-                         VerticalAlignment="Center" HorizontalAlignment="Center"
-                         IsChecked="True"/>
-        <RadioButton Content="Interpreter" 
-                     Grid.Row="1" Grid.Column="1"
                      GroupName="ForditasModja"
-                     x:Name="rdbInterpreter"
-                     VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                     IsChecked="True"/>
+        <RadioButton x:Name="rdoInterpreter"
+                     Content="Interpreter"
+                     Grid.Row="1" Grid.Column="1"/>
 
         <Label Content="Nyelvcsalád"
-                   Grid.Row="2" Grid.Column="0" 
-                   />
-        <ComboBox Grid.Row="2" Grid.Column="1" 
-                Width="100" x:Name="cmbNyelvCsalad">
+               Grid.Row="2" Grid.Column="0"/>
+        <ComboBox x:Name="cboNyelvCsalad" 
+                  Grid.Row="2" Grid.Column="1">
+
             <ComboBoxItem Content="Moduláris"/>
             <ComboBoxItem Content="Strukturális"/>
             <ComboBoxItem Content="Funkcionális"/>
-            <ComboBoxItem Content="Objektumorientált" 
-                              IsSelected="True"/>
+            <ComboBoxItem Content="Objektumorientált" IsSelected="True"/>
         </ComboBox>
 
-        <Label Grid.Row="3" Grid.Column="0" 
-                Content="Megjelenés éve"/>
-        <TextBox Grid.Row="3" Grid.Column="1" 
-                Width="100" x:Name="txtMegjelenes"/>
+        <Label Content="Megjelenés éve"
+               Grid.Row="3" Grid.Column="0"/>
 
-        <RadioButton Grid.Row="4" Grid.Column="0"
+        <TextBox x:Name="txtMegjelenes"
+                 Grid.Row="3" Grid.Column="1"/>
+
+        <RadioButton x:Name="rdoMagasSzintu"
+                     Grid.Row="4" Grid.Column="0"
                      GroupName="NyelviSzint"
-                     Content="Magas szintű nyelv" 
-                         x:Name="rdbMagasSzintu"
-                         VerticalAlignment="Center" 
-                         IsChecked="True"/>
-        <RadioButton Grid.Row="4" Grid.Column="1"
+                     Content="Magas szintű nyelv"
+                     IsChecked="True" Checked="rdoMagasSzintu_Checked"/>
+        <RadioButton x:Name="rdoAlacsonySzintu"
+                     Grid.Row="4" Grid.Column="1"
                      GroupName="NyelviSzint"
-                     Content="Alacsony szintű nyelv" 
-                         x:Name="rdbAlacsonySzintu"
-                         VerticalAlignment="Center"/>
+                     Content="Alacsony szintű nyelv"/>
 
         <Label Content="Népszerűség"
                Grid.Row="5" Grid.Column="0"/>
-
-        <Slider Minimum="1" Maximum="20"
-                    Width="150" 
+        <Slider x:Name="sliNepszeruseg"
                 Grid.Row="5" Grid.Column="1"
-                    x:Name="sliNepszeruseg"/>
+                Minimum="1" Maximum="20"/>
 
-        <Button Content="Rögzít" Width="50"
-                Grid.Row="6" Grid.Column="0"
-                x:Name="btnRogzit"
-                HorizontalAlignment="Left"/>
+        <Button x:Name="btnRogzit"
+                Content="Rögzít"
+                Grid.ColumnSpan="2"
+                Grid.Row="6" Grid.Column="0" Click="btnRogzit_Click"/>
     </Grid>
 </Window>
